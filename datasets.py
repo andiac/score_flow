@@ -198,11 +198,11 @@ def get_dataset(config, additional_dim=None, uniform_dequantization=False, evalu
     if isinstance(dataset_builder, tfds.core.DatasetBuilder):
       dataset_builder.download_and_prepare()
       ds = dataset_builder.as_dataset(
-        split=split, shuffle_files=True, read_config=read_config)
+        split=split, shuffle_files=False, read_config=read_config)
     else:
       ds = dataset_builder.with_options(dataset_options)
     ds = ds.repeat(count=num_epochs)
-    ds = ds.shuffle(shuffle_buffer_size)
+    # ds = ds.shuffle(shuffle_buffer_size)
     ds = ds.map(preprocess_fn, num_parallel_calls=tf.data.experimental.AUTOTUNE)
     for batch_size in reversed(batch_dims):
       ds = ds.batch(batch_size, drop_remainder=True)

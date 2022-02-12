@@ -651,6 +651,11 @@ def evaluate(config,
     begin_bpd_round = 0
     begin_sampling_round = 0
 
+  logging.info("write bpds into bpd.txt")
+  with open("bpd.txt", "w") as f:
+    for bpd in bpds:
+      f.write(str(bpd) + '\n')
+
   # Remove all meta files after finishing evaluation
   meta_files = tf.io.gfile.glob(
     os.path.join(eval_dir, f"meta_{jax.host_id()}_*"))
