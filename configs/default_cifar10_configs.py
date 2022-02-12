@@ -41,7 +41,8 @@ def get_default_configs():
   evaluate.begin_ckpt = 26
   evaluate.end_ckpt = 26
   evaluate.ckpt_id = 26
-  evaluate.batch_size = 1024
+  # 64 for 2080Ti
+  evaluate.batch_size = 64
   evaluate.enable_sampling = False
   evaluate.num_samples = 50000
   evaluate.enable_loss = False
