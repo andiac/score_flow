@@ -48,7 +48,7 @@ def get_default_configs():
   evaluate.enable_loss = False
   evaluate.enable_bpd = True
   evaluate.bpd_dataset = 'test'
-  evaluate.num_repeats = 2
+  evaluate.num_repeats = 1
   evaluate.bound = False
   evaluate.dsm = True
   evaluate.dequantizer = False
