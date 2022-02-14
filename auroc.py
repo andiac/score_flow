@@ -3,8 +3,8 @@ from sklearn.metrics import roc_auc_score
 import matplotlib
 import matplotlib.pyplot as plt
 
-ind_file_path = "./cifar10_cifar10_vp_bpd.txt" 
-ood_file_path = "./svhn_cifar10_vp_bpd.txt" 
+ind_file_path = "./cifar10_deep.txt" 
+ood_file_path = "./svhn_deep.txt" 
 
 with open(ind_file_path, "r") as f:
   ind_bpds = np.array(list(map(float, f.readlines())))
